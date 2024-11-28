@@ -1,0 +1,711 @@
+/* SudokuBoard.css */
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  position: relative;
+  top: -10px;
+}
+
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }  
+  
+  
+  #errors, #success-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+  }
+  #errors {
+    color: #d9534f; /* Red for errors */
+  }
+  
+  #success-message {
+    color: white; 
+    animation: fadeIn 1s ease-in-out;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  
+  background: blue; /* Semi-transparent red background */
+  padding: 40px 60px;
+  border-radius: 20px; /* Soft rounded corners */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Slight shadow for floating effect */
+  z-index: 1000;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  opacity: 1;
+  
+  backdrop-filter: blur(10px); /* Background blur for a modern effect */
+  position: absolute;
+  top: 160px;
+  left: 300px;
+} 
+  
+  #success-message h2{
+    margin: 0 0 15px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  }
+  #success-message p{
+    margin: 10px 0;
+  font-size: 18px;
+  }
+/* Animation for Success Message */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}  
+.digits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.number {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.number:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.number-selected {
+  background-color: #007bff;
+  color: white;
+}
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tile-input {
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+}
+.tile-start {
+  background-color: #f5f5f5;
+  color: #aaa;
+}
+
+.tile-correct-temp {
+  background-color: #4caf50; /* Green color for correct input */
+  color: white;
+  animation: greenFadeOut 3s ease-out forwards; /* Green color fades out after 3 seconds */
+}
+
+@keyframes greenFadeOut {
+  0% {
+    background-color: #4caf50; /* Start with green */
+  }
+  100% {
+    background-color: transparent; /* Fade to transparent */
+  }
+}
+
+.tile-correct {
+  background-color: #4caf50; /* Green color for correct input */
+  color: white;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Soft green glow */
+}
+
+/* Styling for incorrect answer */
+
+/* Lock styling (for starting tiles that cannot be edited) */
+.tile-locked {
+  background-color: #eeeeee; 
+  color: #aaa; 
+}
+
+.tile-duplicate {
+  background-color: red; /* Light red for duplicate numbers */
+  border: 1px solid #e74c3c;
+  color: red;
+}
+
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+.tile-incorrect {
+  background-color: #f44336 !important; 
+  color: white;
+  box-shadow: 0 0 10px rgba(244, 67, 54, 0.5); 
+}
+.tile input:focus {
+  outline: none;
+  background-color: lightgrey;
+  width: 100%;
+  height: 100%;
+}
+
+  .reset-message {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+ /* #success-message {
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+    margin-top: 0;  
+    padding: 40px 60px;
+    position: fixed;  
+    top: 50%;        
+    left: 50%;        
+    transform: translate(-50%, -50%) scale(0.5);  
+    z-index: 1000;    
+    border-radius: 20px; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  opacity: 1;
+  animation: fadeInOut 5s ease-out; 
+  backdrop-filter: blur(10px);
+  }*/
+
+
+
+
+ 
+  
+  
+  
+  /* Game Over Popup */
+.game-over-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(244, 67, 54, 0.8); /* Semi-transparent red background */
+  color: white;
+  padding: 40px 60px;
+  border-radius: 20px; /* Soft rounded corners */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Slight shadow for floating effect */
+  z-index: 1000;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  opacity: 1;
+  animation: fadeInOut 5s ease-out; /* Smooth fade in and out animation */
+  backdrop-filter: blur(10px); /* Background blur for a modern effect */
+}
+
+.game-over-popup h2 {
+  margin: 0 0 15px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.game-over-popup p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.game-over-popup .btn {
+  background-color: #ffffff;
+  color: #f44336;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.game-over-popup .btn:hover {
+  background-color: #ffcccc; /* Light red on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .board-container {
+    grid-template-columns: repeat(9, 40px); /* Smaller tiles for mobile */
+    grid-template-rows: repeat(9, 40px);
+  }
+
+  .tile {
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Apply animations to the game over popup */
+#game-over-popup {
+  animation: fadeIn 1s forwards;
+}
+
+#game-over-popup.hide {
+  animation: fadeOut 1s forwards;
+}
+
+.tile-incorrect input {
+  background-color: red;
+  color: red;
+  
+}
+
+/*.sudoku-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  border: 1px solid #ddd;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.sudoku-cell input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: none;
+  font-size: 24px;
+  background: transparent;
+  outline: none;
+}*/
+
+/*.board-container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  border: 2px solid; 
+}*/
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr); /* Make 9 equal-width columns */
+  grid-template-rows: repeat(9, 1fr); /* Make 9 equal-height rows */
+  gap: 0px; /* No gap between rows and columns */
+  width: 450px; /* Set width of the board */
+  height: 450px; /* Set height of the board */
+  
+}
+
+/* Add bottom border to specific rows */
+.tile-bottom-border {
+  border-bottom: 3px solid black;
+}
+
+/* Add right border to specific columns */
+.tile-right-border {
+  border-right: 3px solid black;
+}
+/* Add to your SudokuBoard.css */
+
+#timer {
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: bold;
+  color: #333;
+  position: absolute;
+  top: 85px;
+  left: 12px;
+}
+
+#errors{
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: bold;
+  color: #333;
+  position: absolute;
+  top: 15px;
+  left: 12px;
+}
+
+ #move-count {
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: bold;
+  color: #333;
+  position: absolute;
+  top: 50px;
+  left: 12px;
+ }
+
+.difficulty-description {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.difficulty-description p {
+  margin: 0;
+}
+
+.pause-resume-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pause-resume-button:hover {
+  background-color: #45a049;
+}
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000; /* Make sure the popup is on top */
+  animation: fadeOut 3s forwards; /* Optional: Add fade-out animation */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.title2 {                /* Bold text */
+  font-family: 'Arial', sans-serif;  /* Choose a clean, readable font */
+  font-size: 36px;                   /* Larger font size for prominence */
+  font-weight: bold;                 /* Bold text */
+  color: blue;                       /* Dark gray color for the text */
+  text-align: center;                /* Center-align the title */
+  margin-top: 20px;                  /* Adds space above the title */
+  margin-bottom: 20px;               /* Adds space below the title */
+  text-transform: uppercase;         /* Makes the text uppercase */
+  letter-spacing: 2px;               /* Adds space between letters for a neat effect */
+  padding: 10px 0;  
+  position: relative;
+  bottom: 30px;
+               /* Padding around the title */
+ 
+  
+  
+}
+
+
+
+.btn5 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  bottom: 480px;
+  left: 570px;
+}
+
+.btn5:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn5:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn5:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn6 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 20px;
+  left: 1100px;
+}
+
+.btn6:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn6:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn6:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn7 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 80px;
+  left: 1100px;
+}
+
+.btn7:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn7:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn7:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn8 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 140px;
+  left: 1100px;
+}
+
+.btn8:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn8:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn8:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn9 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 200px;
+  left: 1100px;
+}
+
+.btn9:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn9:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn9:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn10 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 260px;
+  left: 1100px;
+}
+
+.btn10:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn10:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn10:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn11 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 140px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 320px;
+  left: 1100px;
+}
+
+.btn11:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn11:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn11:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+

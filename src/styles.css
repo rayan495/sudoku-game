@@ -1,0 +1,236 @@
+/* Styles.css */
+input[type="file"] {
+    margin: 10px 0;
+    width: 200px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  pre {
+    font-size: 14px;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  /* SudokuSolver.css */
+/*.sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 0px;
+    width: 450px;
+    height: 450px;
+    
+  }
+  
+  .sudoku-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .sudoku-cell input {
+    width: 80%;
+  height: 80%;
+  text-align: center;
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+  }
+  
+  .sudoku-cell input:focus {
+    outline: none;
+  }
+  
+  .sudoku-cell.filled {
+    background-color: #f0f0f0;
+  }
+  
+  
+ .tile-bottom-border {
+    border-bottom: 3px solid black;
+  }
+  
+ 
+  .tile-right-border {
+    border-right: 3px solid black;
+  }
+  */
+
+  .sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    gap: 1px;
+  }
+  
+  .sudoku-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+  }
+  
+  .tile-bottom-border {
+    border-bottom: 3px solid black;
+  }
+  
+  .tile-right-border {
+    border-right: 3px solid black;
+  }
+  
+  input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    background-color: #f0f0f0;
+  }
+  /* Basic button styling */
+.btnn1 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 16px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 160px;
+}
+
+.btnn1:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btnn1:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btnn1:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+/* Title styling */
+.title {
+  font-family: 'Arial', sans-serif;  /* Choose a clean, readable font */
+  font-size: 36px;                   /* Larger font size for prominence */
+  font-weight: bold;                 /* Bold text */
+  color: #333;                       /* Dark gray color for the text */
+  text-align: center;                /* Center-align the title */
+  margin-top: 20px;                  /* Adds space above the title */
+  margin-bottom: 20px;               /* Adds space below the title */
+  text-transform: uppercase;         /* Makes the text uppercase */
+  letter-spacing: 2px;               /* Adds space between letters for a neat effect */
+  padding: 10px 0;                   /* Padding around the title */
+  border-bottom: 3px solid #007bff;  /* Adds a blue bottom border to match button */
+}
+
+.title span {
+  color: #007bff;                    /* If you want to add color to part of the title */
+  font-size: 40px;                   /* Slightly larger font size for specific parts */
+}
+
+.btn2 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 20px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 180px;
+  height: 60px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 200px;
+  left: 550px;
+}
+
+.btn2:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn2:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn2:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn3 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 20px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 180px;
+  height: 60px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 300px;
+  left: 550px;
+}
+
+.btn3:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn3:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn3:focus {
+  outline: none;                     /* Remove outline when focused */
+}
+
+.btn4 {
+  padding: 10px 20px;                /* Padding around the text */
+  font-size: 20px;                   /* Text size */
+  color: #fff;                       /* White text */
+  background-color: #007bff;         /* Blue background */
+  border: none;                      /* Remove the default border */
+  border-radius: 5px;                /* Rounded corners */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s;  /* Smooth transition effects */
+  width: 180px;
+  height: 60px;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 400px;
+  left: 550px;
+}
+
+.btn4:hover {
+  background-color: #0056b3;         /* Darker blue when hovered */
+  transform: scale(1.05);             /* Slight scale effect */
+}
+
+.btn4:active {
+  transform: scale(0.98);             /* Slight shrink effect when clicked */
+}
+
+.btn4:focus {
+  outline: none;                     /* Remove outline when focused */
+}

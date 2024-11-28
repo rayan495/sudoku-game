@@ -1,0 +1,65 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%; /* Adjust width here */
+    max-width: 500px; /* Limit the max width */
+    max-height: 80%; /* Limit the max height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    text-align: left;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for aesthetics */
+  }
+  
+  .btn1 {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn1:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 10px 0;
+  }
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  .title {
+    font-family: 'Arial', sans-serif;  /* Choose a clean, readable font */
+    font-size: 36px;                   /* Larger font size for prominence */
+    font-weight: bold;                 /* Bold text *         /* Makes the text uppercase */
+    letter-spacing: 2px;               /* Adds space between letters for a neat effect */
+    padding: 10px 0;                   /* Padding around the title */
+    color: blue;
+  }
+
+  .stp{                  /* Padding around the title */
+    color: blue;
+
+  }
