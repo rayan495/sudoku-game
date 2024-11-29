@@ -1,19 +1,3 @@
-/*import React from 'react';
-import { Link } from 'react-router-dom';
-
-const HomePage: React.FC = () => {
-  return (
-    <div>
-      <h1>Welcome to the Sudoku Game</h1>
-      
-      <Link to="/sudoku">
-        <button>Start</button>
-      </Link>
-    </div>
-  );
-};
-export default HomePage;*/
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GameExplanationModal from './GameExplanationModal';
